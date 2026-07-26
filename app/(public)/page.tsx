@@ -39,10 +39,9 @@ export default function HomePage() {
   return (
     <div className="space-y-6">
       <div className="bg-[#d9f0f2] border border-[#b8dde0] rounded-md p-5 text-center">
-        <h2 className="text-lg font-bold text-[#0d4f52] mb-1">Anichin - Review &amp; Rekomendasi Donghua Sub Indo</h2>
+        <h2 className="text-lg font-bold text-[#0d4f52] mb-1">Anichin - Fansub Donghua Sub Indo</h2>
         <p className="text-xs text-[#0d4f52]/80">
-          Situs review donghua legal. Kami tidak menyimpan file video apa pun — semua konten memakai link/embed
-          pihak ketiga.
+          Bantu kami dengan rekomendasikan Anichin di media sosial dan teman-teman kalian.
         </p>
       </div>
 
