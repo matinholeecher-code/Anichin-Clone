@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useMemo, useState, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import { useData } from "@/lib/context/DataContext";
 import { PosterCard } from "@/components/PosterCard";
@@ -15,7 +15,7 @@ interface ArchiveGridProps {
   presetType?: string;
 }
 
-export function ArchiveGrid({ title, presetStatus, presetType }: ArchiveGridProps) {
+function ArchiveGridContent({ title, presetStatus, presetType }: ArchiveGridProps) {
   const { animes } = useData();
   const searchParams = useSearchParams();
   const [letter, setLetter] = useState("All");
@@ -114,5 +114,13 @@ export function ArchiveGrid({ title, presetStatus, presetType }: ArchiveGridProp
         </div>
       )}
     </div>
+  );
+}
+
+export function ArchiveGrid(props: ArchiveGridProps) {
+  return (
+    <Suspense fallback={<div className="p-10 text-center text-[#a0a0a0]">Memuat data...</div>}>
+      <ArchiveGridContent {...props} />
+    </Suspense>
   );
 }
