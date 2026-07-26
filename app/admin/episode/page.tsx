@@ -5,7 +5,7 @@ import { useData } from "@/lib/context/DataContext";
 import { Button } from "@/components/ui/button";
 import { Plus, Edit, Trash, Search } from "lucide-react";
 import { EpisodeForm } from "@/components/admin/EpisodeForm";
-import { Episode, ServerLink, DownloadLink } from "@/types";
+import { Episode, ServerLink, DownloadRow } from "@/types";
 import { formatDate } from "@/lib/helpers";
 
 export default function AdminEpisodePage() {
@@ -48,7 +48,7 @@ export default function AdminEpisodePage() {
     title: string;
     releaseDate: string;
     servers: ServerLink[];
-    downloadLinks: DownloadLink[];
+    downloadLinks: DownloadRow[];
   }) => {
     if (!activeAnime) return;
     if (editing) {
@@ -86,7 +86,7 @@ export default function AdminEpisodePage() {
         <select
           value={activeAnimeId}
           onChange={(e) => setSelectedAnimeId(e.target.value)}
-          className="bg-[#141414] border border-[#2a2a2a] rounded-md text-sm px-3 py-2"
+          className="bg-[#141414] border border-[#2a2a2a] rounded-md text-sm px-3 py-2 text-white"
         >
           {animeOptions.length ? (
             animeOptions.map((a) => (
