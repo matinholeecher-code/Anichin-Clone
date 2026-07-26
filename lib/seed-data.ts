@@ -19,8 +19,8 @@ function makeEpisodes(animeId: string, count: number, daysAgoStart: number) {
         { name: "Bilibili", embedUrl: "https://www.bilibili.tv/id" },
       ],
       downloadLinks: [
-        { resolution: "720p", provider: "Pixeldrain", url: "https://pixeldrain.com/" },
-        { resolution: "1080p", provider: "Mediafire", url: "https://mediafire.com/" },
+        { resolution: "720p", links: [{ label: "Pixeldrain", url: "https://pixeldrain.com/" }] },
+        { resolution: "1080p", links: [{ label: "Mediafire", url: "https://mediafire.com/" }] },
       ],
     };
   }).reverse();
